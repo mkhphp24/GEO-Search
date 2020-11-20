@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Home !{% endblock %}
+    {% block menu %}{{ include('Menu.html.twig') }}{% endblock  %}
+
+{% block body %}
+
+    <div id="map" class="map"></div>
+    <!-- Modal -->
+    <div class="modal fade" id="Site-Modal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                  <sapn id="modal-header"></sapn>  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body" id="modal-body">
+                    <form id="form-cordinate" class="form-inline">
+                        <div class="form-row">
+                            <div class="form-group mb-2">
+                                Km <input type="number" id="replyNumber" style="width: 100px;"  value="1" name="form-distance-km" data-bind="value:replyNumber" />
+                            </div>
+                            <div class="form-group mb-9" style="padding: 0px 5px 10px 5px;">
+                                <span id="select-ajax">
+                                    <select class="select-ajax " style="width: 200px;" ></select>
+                                </span>
+                                <input name="form-distance-lat" id="form-distance-lat" type="hidden">
+                                <input name="form-distance-lng" id="form-distance-lng" type="hidden">
+                            </div>
+
+                            <div class="col">
+                                <input type="button" class="btn-sm btn btn-primary"  id="send-cordinate" value="Search">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+   <h4>GDHS: <span id="distance" class="text-primary"></span></h4>
+
+
+
+{% endblock %}
